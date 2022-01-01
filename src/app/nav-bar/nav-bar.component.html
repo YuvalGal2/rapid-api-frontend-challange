@@ -1,0 +1,6 @@
+<mat-toolbar fxLayout="row"  color="primary" *ngIf="menuItems.length > 0">
+  <span fxFlex [fxShow.xs]="false">{{env.appName}}</span>
+  <app-menu-item  [fxShow.xs]="false"  *ngFor="let item of menuItems" [menuItem]="item"></app-menu-item>
+  <button mat-icon-button  [fxShow]="false" [fxShow.sm]="false" [fxShow.md]="false"  [fxShow.xs]="true" (click)="toggleSideNav()"><mat-icon>menu</mat-icon></button>
+</mat-toolbar>
+

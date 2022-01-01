@@ -1,0 +1,43 @@
+@import "../scss/variables";
+.movie-page-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:35px;
+}
+.movie-details-wrapper {
+  padding: 15px;
+  order:2;
+}
+
+.movie-poster-wrapper {
+  display: flex;
+  justify-content: center;
+  order:1;
+}
+.movie-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid $color-light-grey;
+  align-items: center;
+}
+p {
+  word-break: break-all;
+  max-width: 75%;
+}
+
+@media(min-width: $max-size-tablet) {
+  .movie-wrapper {
+    width: 50%;
+  }
+  .movie-page-wrapper {
+    flex-direction: row;
+    order:1;
+
+  }
+  .movie-poster-wrapper {
+    justify-content: unset;
+    order:2;
+  }
+}

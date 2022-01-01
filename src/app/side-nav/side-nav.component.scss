@@ -1,0 +1,20 @@
+@import "../scss/variables.scss";
+
+
+.sidenav {
+  margin-top: 56px;
+  display: block;
+  width: 212px;
+  height: 100%;
+  position: fixed;
+  background: $color-grey;
+}
+
+.sidenav-header {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: $color-white;
+}

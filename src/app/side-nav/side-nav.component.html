@@ -1,0 +1,9 @@
+<mat-sidenav autosize class="sidenav" mode="side" #sidenav>
+  <div class="sidenav-header">
+    <h2>Menu</h2>
+  </div>
+  <div class="sidenav-items">
+    <app-side-nav-item *ngFor="let sideNavItem of menuItems" [menuItem]="sideNavItem"></app-side-nav-item>
+  </div>
+
+</mat-sidenav>

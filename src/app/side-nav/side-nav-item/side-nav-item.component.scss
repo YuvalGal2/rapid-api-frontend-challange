@@ -1,0 +1,11 @@
+@import "../../scss/variables";
+.side-nav-item {
+  margin-top: 25px;
+}
+.side-nav-item label {
+  font-size: 1.7rem;
+  padding: 10px;
+  color: $color-white;
+  cursor: pointer;
+  font-weight: bold;
+}

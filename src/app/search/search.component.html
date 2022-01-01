@@ -1,0 +1,11 @@
+<form class="search-form" [formGroup]="searchForm">
+  <mat-form-field class="search-input">
+    <mat-label>Search Movie
+      <small class="text-danger"  *ngIf="searchForm.get('search')?.hasError('required')">
+        - This field is required!
+      </small>
+    </mat-label>
+    <input matInput placeholder="{{defaultSearchValue}}" value="{{defaultSearchValue}}"  formControlName="search">
+  </mat-form-field>
+  <button [disabled]="!searchForm.valid" class="search-input-button" mat-button mat-raised-button color="primary" (click)="onSubmit()">Search</button>
+</form>

@@ -1,0 +1,6 @@
+<div class="movie-list-item-wrapper" [routerLink]="['movie', movie.imdbID]">
+    <h3>{{movie.Title}}</h3>
+    <app-movie-poster [posterData]="movie.Poster"></app-movie-poster>
+      {{movie.Type}}
+      {{movie.Year}}
+</div>

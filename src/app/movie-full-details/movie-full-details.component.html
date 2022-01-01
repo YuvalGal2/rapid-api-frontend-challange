@@ -1,0 +1,13 @@
+<div class="movie-page-wrapper">
+    <div class="movie-details-wrapper">
+     <p *ngFor="let item of movieData | keyvalue">
+       <span *ngIf="item.value !== 'N/A' && item.value.length > 0">
+         <b>{{item.key}}:</b>
+         {{item.value}}
+       </span>
+     </p>
+    </div>
+  <div class="movie-poster-wrapper">
+    <app-movie-poster [posterData]="movieData.Poster"></app-movie-poster>
+  </div>
+</div>

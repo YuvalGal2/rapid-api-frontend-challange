@@ -1,0 +1,4 @@
+<div class="movies-list-wrapper">
+  <h1 *ngIf="!moviesList">Search For movies to see some cool results</h1>
+  <app-movie-list-item *ngFor="let movie of moviesList" [movie]="movie"></app-movie-list-item>
+</div>

@@ -1,0 +1,30 @@
+@import "../scss/variables";
+.movies-list-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+app-movie-list-item {
+  min-height: 500px;
+  width: 100%;
+  border: 1px solid $color-border-grey;
+  margin: 15px 0px 0px 15px;
+  cursor: pointer;
+}
+@media(min-width: $max-size-tablet) {
+  app-movie-list-item {
+    width: 50%;
+  }
+  .movies-list-wrapper {
+    flex-direction: row;
+  }
+}
+
+@media(min-width: $max-size-tablet) {
+  app-movie-list-item {
+    width: 12.5%;
+  }
+}
