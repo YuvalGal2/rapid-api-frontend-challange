@@ -1,9 +1,7 @@
 @import "../scss/variables";
-.movie-item-image {
-  width: 300px;
-  height: 350px;
-}
-.movie-item-image img {
+img {
   width: 100%;
-  object-fit: scale-down;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
 }

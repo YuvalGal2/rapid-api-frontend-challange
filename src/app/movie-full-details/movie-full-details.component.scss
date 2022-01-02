@@ -1,43 +1,46 @@
 @import "../scss/variables";
+
+.prop {
+  margin-top: 10px;
+}
+.prop:last-child {
+  margin-bottom: 10px;
+}
 .movie-page-wrapper {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   margin-top:35px;
+  width: 100%;
+}
+.movie-poster-wrapper {
+  order: 1;
+  flex-basis: 100%;
 }
 .movie-details-wrapper {
-  padding: 15px;
-  order:2;
+  order: 2;
+  flex-basis: 100%;
+  display:flex;
+  padding-left: 10px;
+  flex-direction: column;
 }
-
-.movie-poster-wrapper {
-  display: flex;
-  justify-content: center;
-  order:1;
-}
-.movie-wrapper {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  border: 1px solid $color-light-grey;
-  align-items: center;
-}
-p {
-  word-break: break-all;
-  max-width: 75%;
-}
-
 @media(min-width: $max-size-tablet) {
-  .movie-wrapper {
-    width: 50%;
+  .prop {
+    word-break: break-word;
+    max-width: 65%;
   }
   .movie-page-wrapper {
     flex-direction: row;
-    order:1;
-
+    margin: 40px auto 0;
+    width:60%;
+    justify-content: center;
   }
   .movie-poster-wrapper {
-    justify-content: unset;
-    order:2;
+    order: 2;
+    flex-basis: 30%;
+  }
+  .movie-details-wrapper {
+    order: 1;
+    flex-basis: 70%;
   }
 }
+

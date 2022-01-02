@@ -1,18 +1,10 @@
 [
   {
   "link":"/",
-  "label": "Home",
-  "icon": "home",
-  "showOnMobile": true,
-  "showOnTablet": true,
-  "showOnDesktop": true
+  "label": "Home"
   },
   {
   "link":"/favorites",
-  "label": "Favorites",
-  "icon": "favorite",
-  "showOnMobile": true,
-  "showOnTablet": true,
-  "showOnDesktop": true
+  "label": "Favorites"
   }
 ]

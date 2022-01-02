@@ -1,13 +1,23 @@
 <div class="movie-page-wrapper">
-    <div class="movie-details-wrapper">
-     <p *ngFor="let item of movieData | keyvalue">
-       <span *ngIf="item.value !== 'N/A' && item.value.length > 0">
-         <b>{{item.key}}:</b>
-         {{item.value}}
-       </span>
-     </p>
-    </div>
+  <div class="movie-details-wrapper">
+    <div *ngFor="let item of movieData | keyvalue" class="item-data-field">
+      <!--  Prevent from the user the need to see N/A or empty strings  -->
+      <!--  Hide none relevant fields     -->
+      <div *ngIf="item.value !== 'N/A' && item.value.length > 0 && !hideFields.includes(item.key)" class="prop">
+        <!--   All Fields Other then the Ratings.. Ratings is special.      -->
+         <span *ngIf="item.key.toString() !== 'Ratings'">
+            <b>{{item.key}}: </b>
+            <span>{{item.value}}</span>
+         </span>
+
+         <span *ngIf="item.key.toString() === 'Ratings'">
+           <b>{{item.key}}:</b>
+           <app-movie-rating-table [ratingData]="item.value"></app-movie-rating-table>
+         </span>
+       </div>
+     </div>
+  </div>
   <div class="movie-poster-wrapper">
-    <app-movie-poster [posterData]="movieData.Poster"></app-movie-poster>
+    <app-movie-poster *ngIf="movieData" [posterData]="movieData.Poster"></app-movie-poster>
   </div>
 </div>

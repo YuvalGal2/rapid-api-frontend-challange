@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import {Subject, Subscription} from 'rxjs';
+import { Subscription} from 'rxjs';
+import {Injectable, OnDestroy} from '@angular/core';
 import {DataService} from './shared/data.service';
 import {StateService} from './shared/state.service';
-import {Movie} from '../models/movie.model';
 import {environment} from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 
-export class SearchService {
+export class SearchService implements OnDestroy{
   private readonly env = environment;
   private subscriptions = new Subscription();
   constructor(private dataService: DataService,
@@ -35,5 +34,10 @@ export class SearchService {
   // fetch the data from dataService
   setSearchObserable(query: string): void {
     this.fetchDataByQuery(query);
+  }
+
+  // better memory management
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 }

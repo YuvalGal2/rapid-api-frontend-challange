@@ -1,6 +1,6 @@
+import {Observable} from 'rxjs';
 import { Injectable } from '@angular/core';
 import {DataService} from './shared/data.service';
-import {Observable} from 'rxjs';
 import {StateService} from './shared/state.service';
 import {environment} from '../../environments/environment';
 
@@ -17,30 +17,27 @@ export class MoviesService {
     return this.dataService.sendRequest(`${this.env.moviesDataAPIKey}/movie/`,'get',{imdbId:movieId});
   }
 
-  isFavoriteMovie(imdbID: string): boolean|void {
-    if (this.stateService.getFavoritesMovies().filter((movieObject: any) => movieObject.Key === imdbID).length > 0){
-      return true;
-    }
-  }
-
+  // all code below is an extra, for favorites system.
+  // the code is talking with the state service to keep track of the system behavior
+  // and prevent the need to access directly the state management service
   private handleMovieInFavorites(imdbID: string): void {
     const isFavoriteMovie = this.isFavoriteMovie(imdbID);
     this.stateService.toggleMovieToFavorites(isFavoriteMovie ? 'remove' : 'add', imdbID);
   }
+  isFavoriteMovie(imdbID: string): boolean|void {
+    if (this.stateService.getFavoritesMovies().filter((movieObject: any) => movieObject.imdbID === imdbID).length > 0){
+      return true;
+    }
+  }
   toggleFavorites(imdbID: string): void {
     this.handleMovieInFavorites(imdbID);
   }
-
   getFavoritesMoviesState(): Observable<any> {
     return this.stateService.getFavoritesMoviesState();
   }
-
   getFavoritesMoviesList(): any[] {
     return this.stateService.getFavoritesMoviesAsList();
   }
 
-  emitError(error: any): void {
-    this.dataService.emitRequestError(error);
-  }
 
 }

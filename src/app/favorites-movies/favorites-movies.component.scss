@@ -1,0 +1,34 @@
+@import "../scss/variables";
+
+.favorites-page-wrapper{
+  display: flex;
+  flex-basis: 100%;
+  margin-top: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+
+.fav-container {
+  margin-top :15px;
+  width: 90%;
+}
+
+@media(min-width: $max-size-tablet) {
+  .fav-container {
+    width: 50%;
+    margin:5px;
+  }
+
+}
+@media(min-width: $max-size-desktop) {
+  .fav-container {
+    width: 15%;
+  }
+  .favorites-page-wrapper {
+    flex-direction: row;
+  }
+}

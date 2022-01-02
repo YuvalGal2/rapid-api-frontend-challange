@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, OnDestroy{
   private openErrorDialog(error: any ): void {
     const dialogRef = this.dialog.open(MessageModalComponent, {
       width: '250px',
-      data: {dialogHeader:error.status, dialogContent:error.error.Message}
+      data: {dialogHeader:error.status, dialogContent: error.message}
     });
   }
 

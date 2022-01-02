@@ -1,8 +1,5 @@
-<!--For Mobile phones only-->
-<app-nav-bar [menuItems]="menuItems"></app-nav-bar>
-<mat-sidenav-container class="main-sidenav" [fxShow]="false" [fxShow.xs]="true" [fxShow.sm]="false" autosize >
+<div class="side-nav-wrapper">
   <app-side-nav [menuItems]="menuItems"></app-side-nav>
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
-<!-- For other (tablet,desktop,large screen) -->
+</div>
 <router-outlet></router-outlet>
+

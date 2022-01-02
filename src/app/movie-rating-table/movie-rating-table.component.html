@@ -1,0 +1,8 @@
+<table *ngIf="ratingData">
+  <th>Source</th>
+  <th>Rating</th>
+  <tr *ngFor="let row of ratingData">
+    <td>{{row.Source}}</td>
+    <td>{{row.Value}}</td>
+  </tr>
+</table>

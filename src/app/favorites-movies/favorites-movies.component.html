@@ -1,0 +1,8 @@
+<div class="favorites-page-wrapper">
+  <div class="no-favs-container" *ngIf="favoritesMoviesIds.length === 0">
+    <h1>Opps! It's seems you don't have anything here yet!</h1>
+  </div>
+  <div class="fav-container" *ngFor="let movieId of favoritesMoviesIds">
+    <app-favorite-movie  [movieId]="movieId.imdbID"></app-favorite-movie>
+  </div>
+</div>
